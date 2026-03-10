@@ -2,6 +2,8 @@
 
 An advanced implementation of the **RRT*** (Rapidly-exploring Random Tree Star) algorithm in Python. This algorithm is designed for determining optimal and collision-free paths in a 2D space (NED coordinates - North-East), dedicated to mobile robotics, drones, or autonomous vehicles (e.g., ASV - Autonomous Surface Vehicles).
 
+![image](image_41b0dd.png)
+
 It stands out from the classic RRT* by integrating an Artificial Potential Fields mechanism and intelligent space sampling using Delaunay triangulation.
 
 ## Key Features
@@ -9,6 +11,9 @@ It stands out from the classic RRT* by integrating an Artificial Potential Field
 * **Asymptotic Optimality (RRT*)**: The algorithm doesn't just find the first available path (like standard RRT), but optimizes it over time by "rewiring" nodes to minimize the total path cost.
 * **Artificial Potential Fields**: Obstacles generate "influence zones". Paths running too close to obstacles receive drastic cost penalties, which naturally pushes the path away from hazards.
 * **Intelligent Sampling (Delaunay Heuristics)**: Instead of randomly sampling points across the entire space, the algorithm can utilize a provided Delaunay mesh with weights, focusing on triangles located in the general direction of the goal.
+
+![image](image_41b119.png)
+  
 * **Dynamic Target Node Count**: Calculates the optimal number of target nodes based on the search area size and the specified step size (`step_size`).
 * **Early Stopping**: The algorithm can halt before reaching the node limit if the best cost hasn't improved for a sufficiently long time, saving computational resources.
 * **Path Smoothing**: A post-processing module that removes unnecessary "zig-zags" typical of RRT* using raycasting and the reduction of densely packed points.
