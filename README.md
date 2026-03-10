@@ -105,5 +105,3 @@ Here is a detailed description of all the parameters accepted by the `RRTStar` c
 * **`repulsive_weight`**: *(float, default=15.0)* The penalty weight applied by the artificial potential fields. It scales the added cost when passing close to obstacles. Influences the cost formula: $penalty = 0.5 \times weight \times term^2$.
 * **`goal_region_radius`**: *(float, default=0.35)* The acceptance radius around the target goal. A node generated within this distance from the goal is considered to have successfully reached it.
 * **`search_radius`**: *(float, default=1.0)* The maximum radius within which the RRT* algorithm searches for neighboring nodes during the tree optimization ("rewiring") phase.
-
-Would you like me to review your Python code for any potential optimizations, or is the documentation ready to be pushed to your repository?
