@@ -1,14 +1,8 @@
-Oto zaktualizowana wersja pliku `README.md`, w której zintegrowałem Twoje wizualizacje. Użyłem standardowej składni Markdown dla obrazów, korzystając z nazw plików, które przesłałeś.
-
-Aby obrazy wyświetlały się poprawnie na GitHubie, upewnij się, że pliki `image_41b119.png` oraz `image_41b0dd.png` znajdują się w tym samym folderze co Twój plik `README.md` (lub zaktualizuj ścieżki, jeśli wrzucisz je do folderu np. `docs/` lub `img/`).
-
----
-
 # RRT* Path Planner ze Wsparciem dla Pól Potencjałowych 🚀
 
 Zaawansowana implementacja algorytmu **RRT*** (Rapidly-exploring Random Tree Star) w języku Python. Algorytm służy do wyznaczania optymalnej i bezkolizyjnej ścieżki w przestrzeni 2D (współrzędne NED - North-East), dedykowany dla robotyki mobilnej, dronów lub pojazdów autonomicznych (np. ASV - Autonomous Surface Vehicles).
 
-*Rozrost drzewa RRT* (zielone punkty) z uwzględnieniem aktywnych obszarów (błękitne wielokąty). Czerwona linia prezentuje ostateczną, wygładzoną ścieżkę omijającą strefy wpływu przeszkód.*
+![image](image_41b0dd.png)
 
 Wyróżnia się na tle klasycznego RRT* zintegrowanym mechanizmem Sztucznych Pól Potencjałowych (Artificial Potential Fields) oraz inteligentnym próbkowaniem przestrzeni z wykorzystaniem triangulacji Delaunay'a.
 
@@ -18,7 +12,7 @@ Wyróżnia się na tle klasycznego RRT* zintegrowanym mechanizmem Sztucznych Pó
 * **Sztuczne Pola Potencjałowe (Potential Fields)**: Przeszkody generują "strefy wpływu" (influence zones). Ścieżki przebiegające zbyt blisko przeszkód otrzymują drastyczne kary do kosztu przejścia, co naturalnie odpycha ścieżkę od zagrożeń.
 * **Inteligentne próbkowanie (Delaunay Heuristics)**: Zamiast losować punkty w całej przestrzeni, algorytm potrafi wykorzystać podaną siatkę Delaunay'a z wagami, skupiając się na trójkątach leżących na kierunku do celu.
 
-*Zastosowanie algorytmu do nawigacji pomiędzy punktami (np. bojami). Widoczna siatka triangulacji Delaunay'a ograniczająca przestrzeń poszukiwań oraz wektory kierunku (heading) na wygenerowanej ścieżce.*
+![image](image_41b119.png)
 
 * **Dynamiczny limit węzłów (Target Node Count)**: Kalkuluje optymalną liczbę węzłów docelowych na podstawie powierzchni obszaru poszukiwań i zadanego kroku (`step_size`).
 * **Early Stopping**: Algorytm potrafi zatrzymać się przed osiągnięciem limitu węzłów, jeśli koszt przestał się poprawiać przez odpowiednio długi czas, oszczędzając zasoby obliczeniowe.
@@ -102,7 +96,3 @@ else:
 * `repulsive_weight`: (float) Waga kary dla funkcji pól potencjałowych. Wpływa na wzór kosztu: $penalty = 0.5 \times weight \times term^2$.
 * `goal_region_radius`: (float) Promień akceptacji celu. Węzeł w tym promieniu uznawany jest za sukces.
 * `search_radius`: (float) Promień w jakim RRT* szuka sąsiadów do procedury "rewiring".
-
----
-
-Czy układ tych obrazów Ci odpowiada, czy wolałbyś przenieść któryś z nich na sam dół do specjalnej sekcji "Galeria" / "Przykłady użycia"?
